@@ -9,9 +9,8 @@ a:hover{
     color:#014343;
 }
 
-a.active_class {
-   color:yellow;
-   border-bottom:1px solid red; 
+a.active{
+    color:red;
 }
 
 .search{

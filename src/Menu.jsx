@@ -6,10 +6,10 @@ const Menu = () => {
 
     return (
         <>
-            <NavLink exact activeClassName="active_class" to='/'>About</NavLink>
-            <NavLink exact activeClassName="active_class" to='/contact'>Contact</NavLink>
-            <NavLink exact activeClassName="active_class" to='/profile/yash/pandey' >Profile</NavLink>
-            <NavLink exact activeClassName="active_class" to='/search'>Search</NavLink>
+            <NavLink to='/'>About</NavLink>
+            <NavLink to='/contact'>Contact</NavLink>
+            <NavLink to='/profile/yash/pandey' >Profile</NavLink>
+            <NavLink to='/search'>Search</NavLink>
         </>
     );
 };

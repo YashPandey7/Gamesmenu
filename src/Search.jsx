@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Menu from './Menu';
 import Sresult from './Sresult';
 
 const Search = () => {
@@ -10,6 +11,7 @@ const Search = () => {
 
     return (
         <>
+            <Menu/>
             <div className='search'>
                 <input type='text' placeholder='Search ...' value={img} onChange={inputevent} />
             </div>
