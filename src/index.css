@@ -1,34 +1,44 @@
-a{
-    font-size: 24px;
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@600&display=swap');
+/* a {
     text-decoration: none;
-    padding: 5px 20px;
+    font-size: 24px;
+    margin:10px;
+    padding:5px 15px;
     color:#008080;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Assistant', sans-serif;
 }
 
-a:hover{
-    color:#014343;
+.active {
+    color:#004949;
 }
 
-a.active{
-    color:red;
-}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
 
-.search{
-    margin:20px auto;
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
     text-align: center;
-}
-
-.search input{
-    width:250px;
-    border:1px solid grey;
-    border-radius: 5px;
-    padding: 5px 10px;
-}
-
-.images {
-    text-align: center
-}
-
-.images img {
-    border-radius: 7px;
-}
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+  
+  .active {
+    background-color: #04AA6D;
+  }

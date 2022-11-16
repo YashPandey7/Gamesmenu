@@ -1,12 +1,10 @@
 import React from 'react';
-import Menu from './Menu';
 
 const About = () => {
 
-    return (
+    return(
         <>
-            <Menu/>
-            <h1>Hi, i'm in About Section</h1>
+            <h1>Welcome to About Page</h1>
         </>
     );
 };

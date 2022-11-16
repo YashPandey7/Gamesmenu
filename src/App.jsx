@@ -1,22 +1,24 @@
 import React from 'react';
-import Contact from './Contact';
-import About from './About';
-import Error from './Error';
-import {Routes, Route, Navigate} from 'react-router-dom';
-import Menu from './Menu';
-import Profile from './Profile';
-import Search from './Search';
+import {Routes,Route} from 'react-router-dom';
+import About from './Comp/About';
+import Contact from './Comp/Contact';
+import Home from './Comp/Home';
+import User from './Comp/User';
+import Error from './Comp/Error';
+import Menu from './Comp/Menu';
+import './index.css';
 
 const App = () => {
 
     return (
         <>
+            <Menu/>
             <Routes>
-                <Route path='/' element={<About />} />
-                <Route path='contact' element={<Contact />} />
-                <Route path='profile/:fname/:lname' element={<Profile />} />
-                <Route path='search' element={<Search/>} />
-                <Route path="*" element={<Error/>}/>
+                <Route exact path="/" element={<Home/>}/>
+                <Route exact path="/about" element={<About/>}/> 
+                <Route exact path="/contact" element={<Contact/>}/>  
+                <Route exact path="/user" element={<User/>}/> 
+                <Route path='*' element={<Error/>}/>
             </Routes>
         </>
     );

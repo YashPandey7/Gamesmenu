@@ -1,12 +1,10 @@
 import React from 'react';
-import Menu from './Menu';
 
 const Contact = () => {
 
-    return (
+    return(
         <>
-            <Menu/>
-            <h1>Hi, I'm in Contact section</h1>
+            <h1>Welcome to Contact Page</h1>
         </>
     );
 };
