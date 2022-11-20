@@ -2,9 +2,19 @@ import React, { useState } from 'react';
 import Item1 from './Item1';
 import Sdata from './Sdata';
 
+
+const arr = [... new Set(Sdata.map((val) => {
+    return val.type;
+})), "all"];
+
+console.log(arr);
+
+
+
 const Main = () => {
 
     const [items, setItems] = useState(Sdata);
+    const [menu, setmenu] = useState(arr);
 
     const filterItem = (categItem) => {
         const updatedItems = Sdata.filter((curElem) => {
@@ -28,6 +38,16 @@ const Main = () => {
                     <button className='btn btn-warning' onClick={() => filterItem("Racing")}>Racing Game</button>
                     <button className='btn btn-warning' onClick={() => filterItem("openworld")}>Openworld Game</button>
                     <button className='btn btn-warning' onClick={() => setItems(Sdata)}>All</button>
+
+                    {/* {
+                        menu.map((currval)=> {
+                            return(
+                                <>
+                                <button className='btn btn-warning' onClick={() => filterItem(currval)}>{currval}</button>
+                                </>
+                            );
+                        })
+                    } */}
                 </div>
             </div>
 
@@ -41,7 +61,7 @@ const Main = () => {
                         items.map((val) => {
                             return (
                                 <>
-                                <Item1 name={val.name} desc={val.desc} img={val.img}/>
+                                <Item1 key={val.toString()} name={val.name} desc={val.desc} img={val.img}/>
                                 </>
                             );
                         })
