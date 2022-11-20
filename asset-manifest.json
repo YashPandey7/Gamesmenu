@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Gamesmenu/static/css/main.9467d3a5.css",
+    "main.js": "/Gamesmenu/static/js/main.e938a8fe.js",
+    "static/media/valo.jpg": "/Gamesmenu/static/media/valo.df243c994138905e4069.jpg",
+    "index.html": "/Gamesmenu/index.html",
+    "main.9467d3a5.css.map": "/Gamesmenu/static/css/main.9467d3a5.css.map",
+    "main.e938a8fe.js.map": "/Gamesmenu/static/js/main.e938a8fe.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9467d3a5.css",
+    "static/js/main.e938a8fe.js"
+  ]
+}
