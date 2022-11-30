@@ -1,12 +1,12 @@
 import React from 'react';
 import './index.css';
-import Main from './Main';
+import Weather from './Weather1';
 
 const App = () => {
 
     return (
         <>
-            <Main />
+            <Weather/>
         </>
     );
 };
