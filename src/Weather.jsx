@@ -1,72 +1,134 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 const Weather = () => {
+
+    const [name, setname] = useState('Delhi');
+
+    const inputevent = (event) => {
+        setname(event.target.value);
+    }
+
+    const onclk = async () => {
+        try {
+            let url =`https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=74138d35774f7d3a50eb758b44faa9ff`;
+
+            const res = await fetch(url);
+            const data = await res.json();
+
+            console.log(data);
+        } catch(error){
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        onclk();
+    },[]);
 
     return (
         <>
 
-            <div className="container-fluid px-1 px-sm-3 py-5 mx-auto">
-                <div className="row d-flex justify-content-center">
-                    <div className="row card0">
-                        <div className="card1 col-lg-8 col-md-7">
-                            <div className="text-center">
-                                <img className="image mt-5" src="https://i.imgur.com/M8VyA2h.png" />
-                            </div>
+            <div className="page-content page-container" id="page-content">
+                <div className="padding">
+                    <div className="row container d-flex justify-content-center ">
+                        <div className="col-lg-8 grid-margin stretch-card page-item">
+                            {/* <!--weather card--> */}
 
-                            {/*  */}
-                            <div className='row px-3 mt-3 mb-3'>
-                                <div className='col-2 large-font mr-3'>
-                                    <h1 className="large-font mr-3">26&#176;</h1>
-                                </div>
-                                <div className='col-2'>
-                                    <div className="d-flex flex-column mr-3">
-                                        <h2 className="mt-3 mb-0">London</h2>
-                                        <small>10:36 - Tuesday, 22 Oct '19</small>
+                            <div className="input-group mb-3 mt-3">
+                                <input type="text" className="form-control" placeholder="Enter the name of city...." onChange={inputevent} value={name}/>
+                                <button className="btn btn-outline-primary" type="buttons" onClick={onclk}>Search</button>
+                            </div>
+                            
+                            <div className="card card-weather">
+                                <div className="card-body">
+                                    <div className="weather-date-location">
+                                        <h3>Friday</h3>
+                                        <p className="text-gray">
+                                            <span className="weather-date">25 March, 2019</span>
+                                            <span className="weather-location">Sydney, Australia</span>
+                                        </p>
+                                    </div>
+                                    <div className="weather-data d-flex">
+                                        <div className="mr-auto">
+                                            <h4 className="display-3">32
+                                                <span className="symbol">&deg;</span>C</h4>
+                                            <p>
+                                                Cloudy
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div className='col-2' style={{ marginLeft: '0px', paddingLeft: '0px' }}>
-                                    <div className="d-flex flex-column text-center">
-                                        <h3 className="fa fa-sun-o mt-4"></h3>
-                                        <small>Sunny</small>
+                                <div className="card-body p-0">
+                                    <div className="d-flex weakly-weather">
+                                        <div className="weakly-weather-item">
+                                            <p className="mb-0">
+                                                Sun
+                                            </p>
+                                            <i className="mdi mdi-weather-cloudy"></i>
+                                            <p className="mb-0">
+                                                30&deg;
+                                            </p>
+                                        </div>
+                                        <div className="weakly-weather-item">
+                                            <p className="mb-1">
+                                                Mon
+                                            </p>
+                                            <i className="mdi mdi-weather-hail"></i>
+                                            <p className="mb-0">
+                                                31&deg;
+                                            </p>
+                                        </div>
+                                        <div className="weakly-weather-item">
+                                            <p className="mb-1">
+                                                Tue
+                                            </p>
+                                            <i className="mdi mdi-weather-partlycloudy"></i>
+                                            <p className="mb-0">
+                                                28&deg;
+                                            </p>
+                                        </div>
+                                        <div className="weakly-weather-item">
+                                            <p className="mb-1">
+                                                Wed
+                                            </p>
+                                            <i className="mdi mdi-weather-pouring"></i>
+                                            <p className="mb-0">
+                                                30&deg;
+                                            </p>
+                                        </div>
+                                        <div className="weakly-weather-item">
+                                            <p className="mb-1">
+                                                Thu
+                                            </p>
+                                            <i className="mdi mdi-weather-pouring"></i>
+                                            <p className="mb-0">
+                                                29&deg;
+                                            </p>
+                                        </div>
+                                        <div className="weakly-weather-item">
+                                            <p className="mb-1">
+                                                Fri
+                                            </p>
+                                            <i className="mdi mdi-weather-snowy-rainy"></i>
+                                            <p className="mb-0">
+                                                31&deg;
+                                            </p>
+                                        </div>
+                                        <div className="weakly-weather-item">
+                                            <p className="mb-1">
+                                                Sat
+                                            </p>
+                                            <i className="mdi mdi-weather-snowy"></i>
+                                            <p className="mb-0">
+                                                32&deg;
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-
-                        </div>
-                        <div className="card2 col-lg-4 col-md-5">
-                            <div className="row px-3">
-                                <input type="text" name="location" placeholder="Another location" className="mb-5" />
-                                <div className="fa fa-search mb-5 mr-0 text-center"></div>
-                            </div>
-                            <div className="mr-5">
-                                <p className="light-text suggestion">Birmingham</p>
-                                <p className="light-text suggestion">Manchester</p>
-                                <p className="light-text suggestion">New York</p>
-                                <p className="light-text suggestion">California</p>
-
-                                <div className="line my-5"></div>
-
-                                <p>Weather Details</p>
-                                <div className="row px-3">
-                                    <p className="light-text">Cloudy</p>
-                                    <p className="ml-auto">12%</p>
-                                </div>
-                                <div className="row px-3">
-                                    <p className="light-text">Humidity</p>
-                                    <p className="ml-auto">78%</p>
-                                </div>
-                                <div className="row px-3">
-                                    <p className="light-text">Wind</p>
-                                    <p className="ml-auto">1km/h</p>
-                                </div>
-                                <div className="row px-3">
-                                    <p className="light-text">Rain</p>
-                                    <p className="ml-auto">0mm</p>
-                                </div>
-
-                                <div className="line mt-3"></div>
-                            </div>
+                            {/* <!--weather card ends--> */}
                         </div>
                     </div>
                 </div>

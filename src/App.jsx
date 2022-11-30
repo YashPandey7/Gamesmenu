@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.css';
-import Weather from './Weather1';
+import Weather from './Weather';
 
 const App = () => {
 
