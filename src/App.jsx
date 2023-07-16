@@ -1,12 +1,11 @@
 import React from 'react';
-import './index.css';
-import Main from './Main';
+import Time from './Time';
 
 const App = () => {
 
     return (
         <>
-            <Main />
+            <Time />
         </>
     );
 };
